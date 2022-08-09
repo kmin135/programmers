@@ -5,6 +5,8 @@ import java.util.Arrays;
 /**
  * K번째수
  * https://school.programmers.co.kr/learn/courses/30/lessons/42748
+ *
+ * 소요시간 : 약 10분
  */
 public class KthNumber {
     public static int[] solution(int[] array, int[][] commands) {
