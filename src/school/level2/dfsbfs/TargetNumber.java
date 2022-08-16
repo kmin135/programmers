@@ -1,4 +1,4 @@
-package school.kakao.level2.dfsbfs;
+package school.level2.dfsbfs;
 
 /**
  * 타겟 넘버
