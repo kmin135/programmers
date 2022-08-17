@@ -38,6 +38,7 @@ public class GameMapShortest_2 {
                     distanceMap[nextY][nextX] = nextDistance;
                     bfsQueue.addLast(Coord.of(nextX, nextY));
 
+                    // bfs 에서는 처음 발견한 거리가 정답이므로 즉시 리턴하여 종료
                     if(nextY == maps.length-1 && nextX == maps[0].length-1) {
                         return nextDistance;
                     }
@@ -45,6 +46,7 @@ public class GameMapShortest_2 {
             }
         }
 
+        // 반면에 bfs 로 발견하지 못 했다면 도달불가능하므로 -1
         return -1;
     }
 
