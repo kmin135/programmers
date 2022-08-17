@@ -1,4 +1,4 @@
-package school.kakao.level1.bruteforce;
+package school.level1.bruteforce;
 
 import java.util.ArrayList;
 import java.util.Arrays;
