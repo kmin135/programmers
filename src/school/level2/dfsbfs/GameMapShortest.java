@@ -4,7 +4,8 @@ package school.level2.dfsbfs;
  * 게임 맵 최단거리
  * https://school.programmers.co.kr/learn/courses/30/lessons/1844
  *
- * 소요시간1 : 55분 dfs로 풀다가 실패. -> 다른 의견보니 bfs가 맞는듯.
+ * 소요시간1 : 55분 dfs로 풀다가 효율성 테스트에서 실패. -> 다른 의견보니 bfs가 맞는듯.
+ * 소요시간2 : 15분정도 bfs 로 바꿔볼까 하다가 생각안나서 일단 중단. 큐를 도입해서 재도전해보자.
  */
 public class GameMapShortest {
     // 도달할 수 없는 경우도 있다. 이 경우 -1 반환
