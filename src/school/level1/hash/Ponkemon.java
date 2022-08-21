@@ -1,4 +1,4 @@
-package school.kakao.level1.hash;
+package school.level1.hash;
 
 import java.util.HashSet;
 import java.util.Set;
