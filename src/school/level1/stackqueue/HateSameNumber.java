@@ -1,4 +1,4 @@
-package school.kakao.level1.stackqueue;
+package school.level1.stackqueue;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;

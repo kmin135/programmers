@@ -1,4 +1,4 @@
-package school.kakao.level1.sort;
+package school.level1.sort;
 
 import java.util.Arrays;
 
