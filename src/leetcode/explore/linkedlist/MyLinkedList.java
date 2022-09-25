@@ -1,26 +1,36 @@
 package leetcode.explore.linkedlist;
 
+/**
+ * Design Linked List
+ * https://leetcode.com/explore/learn/card/linked-list/209/singly-linked-list/1290
+ */
 class MyLinkedList {
     private int val;
-    // first object's next is head
     private MyLinkedList next;
     private int length = 0;
 
     public MyLinkedList() {
         
     }
-    
-    public int get(int index) {
-        // If the index is invalid, return -1.
-        if(index >= length) return -1;
 
+    // if bigger and equals than zero, return first value node.
+    // if minus, return head node.
+    private MyLinkedList indexOf(int index) {
+        // "this" means head
         MyLinkedList indexNode = this;
 
         for(;index>=0;index--) {
             indexNode = indexNode.next;
         }
 
-        return indexNode.val;
+        return indexNode;
+    }
+    
+    public int get(int index) {
+        // If the index is invalid, return -1.
+        if(index >= length) return -1;
+
+        return indexOf(index).val;
     }
     
     public void addAtHead(int val) {
@@ -38,10 +48,7 @@ class MyLinkedList {
         MyLinkedList newNode = new MyLinkedList();
         newNode.val = val;
 
-        MyLinkedList prevNode = this; // this가 head를 의미함
-        for(;index>0;index--) {
-            prevNode = prevNode.next;
-        }
+        MyLinkedList prevNode = indexOf(index-1);
 
         newNode.next = prevNode.next;
         prevNode.next = newNode;
@@ -52,12 +59,8 @@ class MyLinkedList {
         // Delete the index node in the linked list, if the index is valid.
         if(index >= length) return;
 
-        MyLinkedList prevNode = this;
-        MyLinkedList indexNode = this.next;
-        for(;index>0;index--) {
-            prevNode = indexNode;
-            indexNode = indexNode.next;
-        }
+        MyLinkedList prevNode = indexOf(index-1);
+        MyLinkedList indexNode = prevNode.next;
 
         prevNode.next = indexNode.next;
         length--;
