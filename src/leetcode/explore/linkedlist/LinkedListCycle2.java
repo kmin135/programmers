@@ -25,6 +25,33 @@ public class LinkedListCycle2 {
         return null;
     }
 
+    /**
+     * 몇 개 예제로 해보니 동작은 하는데 원리는 정확히 모르겠음
+     *
+     * 아래 모답설명을 이해해보자
+     * https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1214/discuss/44783/Share-my-python-solution-with-detailed-explanation
+     */
+    public ListNode detectCycle2(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow) {
+                ListNode slow2 = head;
+                while(slow != slow2) {
+                    slow = slow.next;
+                    slow2 = slow2.next;
+                }
+                return slow2;
+            }
+        }
+
+        return null;
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(-1);
         ListNode n1 = new ListNode(1);

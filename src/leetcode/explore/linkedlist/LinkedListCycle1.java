@@ -25,6 +25,29 @@ public class LinkedListCycle1 {
         return false;
     }
 
+    /**
+     * 속도가 다른 두 개의 포인터를 활용한 권장풀이방법
+     * 공간복잡도가 O(1)임
+     *
+     * 속도도 cycle 없으면 2칸씩 검사하던 fast가 끝에 도달하여 끝나고
+     * 있어도 slow가 한 바퀴쨰 돌때까지 만나게되므로 속도도 동일하게 빠름
+     */
+    public boolean hasCycle2(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(-1);
         ListNode n1 = new ListNode(1);
